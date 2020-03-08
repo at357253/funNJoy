@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Fun & Joy</title>
+<link href="funNJoy_style.css" rel="stylesheet" type="text/css" />
+
+    <script language="Javascript"> 
+            function addToCSVFile() {
+			   var l = validateEntry();
+			   if (l == 1) {
+			     alert ("First Name, Last Name, Contact Number and Email ID must be entered");
+			   }
+			   else {
+                var csvData = new Array();  // To collect the names
+                var csvFilePath = "C:\\Users\\20ghosha2\\Documents\\ICT Project - 20191129\\temp\\Contact\\Contact.csv"; // File name
+                // Collecting the names
+                csvData[0] = document.getElementById('fname').value;
+                csvData[1] = document.getElementById('lname').value;
+				csvData[2] = document.getElementById('cnctNo').value;
+				csvData[3] = document.getElementById('emailId').value;
+                csvData[4] = document.getElementById('subject').value;
+                var fso = new ActiveXObject('Scripting.FileSystemObject');
+                var oStream = fso.OpenTextFile(csvFilePath,8,true,0);
+                oStream.Write(csvData.join(','));
+                oStream.Close();
+                clearData();
+                alert("Data Added Successfully");
+				}
+            }
+
+            function clearData() {
+                document.getElementById('fname').value = "";
+                document.getElementById('lname').value = "";
+				document.getElementById('cnctNo').value = "";
+				document.getElementById('emailId').value = "";
+                document.getElementById('subject').value = "";
+            }
+			function validateEntry() {
+			  if (document.getElementById('fname').value == "" || document.getElementById('lname').value == "" || document.getElementById('cnctNo').value == ""
+			     || document.getElementById('emailId').value == "") {
+			     return 1;
+			  }
+			}
+	</script>
+</head>
+<body>
+<div id="funNjoy_wrapper">
+	<div id="funNjoy_left_column">
+        <div id="site_title">
+           <img src="images/logo1.jpg" height="190" width="440"/>    
+        </div>  <!-- end of site_title -->
+		<div id="funNjoy_sidebar">
+		 <br>
+ 		 <br>
+		 <br>
+		 <br>
+ 		 <div class="news_section">
+			<div class="news_box">
+                        <h3>Admission fees: Rs. 10,500 (includes first month's Tuition fees)​</h3>
+                        <p>Age : 1.5 years to 3 years </p>
+           	</div>	
+            <div class="news_box">
+                        <h3>Pre-Nursery:  10:00 AM to 12:30 PM  ​Nursery:        10:00 AM to 01:00 PM  ​Kindergarten: 10:00 AM to 01:00 PM  </h3>
+                        <p>Tuition fees: Rs. 1,700 (to be paid by the 10th of every month, failing which a fine of Rs. 50 per day will be charged)​ </p>
+           	</div>
+			
+			<h1> Our Student's Art Work</h1>
+			<img src="images/activity.jpg" height="190" width="150"/>
+			<img src="images/artwork.jpg" height="190" width="150"/>
+            <img src="images/artwork4.jpg" height="190" width="165"/>
+            <div class="cleaner_h20"></div>		
+        </div>  <!-- end of site_title -->
+		
+		
+    </div>  
+	 
+   </div>         
+            
+  <div id="funNjoy_left_column_Contact">
+  <h1>Contact Us</h1>
+  <h2>Fill out the form below, and one of our admission specialists will contact you.</h2>
+ 			<label for="fname"><b>First Name</b></label><font color="red">*</font>
+			<input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+			<label for="lname"><b>Last Name</b></label><font color="red">*</font>
+			<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+			
+			<label for="cnctNo"><b>Contact Number</b></label><font color="red">*</font>
+			<input type="text" id="cnctNo" name="Contact Number" placeholder="Your Contact Number..">
+			
+			<label for="emailId"><b>Email Id</b></label><font color="red">*</font>
+			<input type="text" id="emailId" name="Email Id" placeholder="Your Email Id..">
+
+			<label for="subject"><b>Message</b</label>
+			<textarea id="subject" name="subject" placeholder="Write something.." style="height:220px"></textarea>
+
+			<input type="button" id="addButton" value="Submit" onClick="javascript: addToCSVFile()" />
+  </div>
+ <div id="funNjoy_right_column_Contact">
+  <h1> Address :</h1>
+  <br>
+  <br>
+  <br>
+  <p><h4><b>1st Floor,
+    Shristi Apartment,
+    Teghoria, Chinar Park,
+    Kolkata-700 157
+    +91.9073332273
+    funnjoyschool@gmail.com</b></h4></p>
+   <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.784164364723!2d88.43602831479303!3d22.62453368515604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e32814446c9%3A0x2f1383e4589b38ab!2sFun%20&#39;n&#39;%20Joy%20Preschool%20%26%20Daycare!5e0!3m2!1sen!2shk!4v1574918844980!5m2!1sen!2shk" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe> -->
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.784164364723!2d88.43602831479303!3d22.62453368515604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e32814446c9%3A0x2f1383e4589b38ab!2sFun%20&#39;n&#39;%20Joy%20Preschool%20%26%20Daycare!5e0!3m2!1sen!2shk!4v1574919107987!5m2!1sen!2shk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+ </div>
+</div> <!-- end of funNjoy_wrapper -->
+    <br>
+	<br>
+	<br>
+	<br>
+<div id="funNjoy_footer_wrapper">
+
+	<div id="funNjoy_footer">
+    
+    	<ul class="footer_menu">
+            <li><a href="Index.html" target="_parent">Home</a></li>
+            <li><a href="Activities.html" target="_parent">Activities</a></li>
+            <li><a href="Daycare.html" target="_parent">Daycare</a></li>
+            <li><a href="Preschool.html" target="_parent">Preschool</a></li>
+            <li class="last_menu"><a href="Contact.html">Contact Us</a></li>
+        </ul>
+       
+        Copyright © 2019 <a href="#">Fun 'N' Joy Preschool and Daycare</a> | 
+        
+	</div><!-- end of footer -->
+
+</div> <!-- end of footer_wrapper -->
+</body>
+</html>
